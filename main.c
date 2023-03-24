@@ -64,7 +64,7 @@ int main() {
     json_value *response =
         invoke_request(token, "getUpdates", 2, "timeout=30", offset_param);
 
-    curl_maprintf(offset_param);
+    curl_free(offset_param);
 
     json_value *ok = get_key("ok", json_boolean, response);
 
